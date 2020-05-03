@@ -11,9 +11,10 @@ L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(
 
 //3. Add all airport data to the map
 var airports = null;
+var state = null;
 
 //4. Add color
-var colors = chroma.scale('dark2').mode('lch').colors(2);
+var colors = chroma.scale('set1').mode('lch').colors(9);
 
 //5. Append style to the page
 
@@ -23,14 +24,19 @@ for (i = 0; i < 2; i++) {
 
 airports = L.geoJson.ajax("assets/airports.geojson",{
   onEachFeature: function (feature, layer) {
-    layer.bindpopup(feature.properties.AIRPT_NAME + feature.properties.TOT_ENP);
-  },
+        if(feature.properties.CNTL_TWR == 'Y') {
+          layer.bindPopup("<b>Airport Name: </b>"+ feature.properties.AIRPT_NAME+ "<br/><b>State: </b>"+feature.properties.STATE+"<br/><b>City: </b>"+feature.properties.CITY+ "<br/><b>Control Tower: </b> PRESENT")
+        } else {
+          layer.bindPopup("<b>Airport Name: </b>"+ feature.properties.AIRPT_NAME+ "<br/><b>State: </b>"+feature.properties.STATE+"<br/><b>City: </b>"+feature.properties.CITY+ "<br/><b>Control Tower: </b> ABSENT")
+        }
+      },
 
   pointToLayer: function (feature, latlng) {
-    var id = 0;
-    if (feature.properties.CNTL_TWR == "Y") { id = 0; }
-    else { id = 1; }
-    return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane marker-color-' + (id + 1).toString() })});
+      if (feature.properties.CNTL_TWR == "N") {
+        return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane marker marker-color-2'})}) ;
+      }else {
+        return L.marker(latlng, {icon: L.divIcon({className: 'fa fa-plane marker-color-1'})});
+      }
   },
   attribution: 'Airports Data &copy; US Government | US States Boundaries &copy; Mike Bostock of D3 | Base Map &copy; CartoDB | Made By Sindhooja Mullapudi'
 }).addTo(mymap);
@@ -38,46 +44,42 @@ airports = L.geoJson.ajax("assets/airports.geojson",{
 //6. Set colors
 colors = chroma.scale('YlOrRd').colors(6);
 
-function setColor(density) {
+function setColor(count) {
     var id = 0;
-    if (density > 50) { id = 5; }
-    else if (density > 40 && density <= 50) { id = 4; }
-    else if (density > 30 && density <= 40) { id = 3; }
-    else if (density > 20 && density <= 30) { id = 2; }
-    else if (density > 10 && density <= 20) { id = 1; }
+    if (count > 50) { id = 5; }
+    else if (count > 40 && count <= 50) { id = 4; }
+    else if (count > 30 && count <= 40) { id = 3; }
+    else if (count > 20 && count <= 30) { id = 2; }
+    else if (count > 10 && count <= 20) { id = 1; }
     else  { id = 0; }
     return colors[id];
 }
 
-//Set style
+//7. Set style
 function style(feature) {
     return {
         fillColor: setColor(feature.properties.count),
         fillOpacity: 0.6,
         weight: 2,
         opacity: 1,
-        color: 'white',
+        color: '#b4b4b4',
         dashArray: '4'
     };
 }
 
 //8. Add states
 states = L.geoJson.ajax("assets/us-states.geojson", {
-  onEachFeature: onEachFeature,
-  style: style
+    onEachFeature: function (feature, layer) {
+          layer.bindPopup(feature.properties.name+" has "+feature.properties.count+" airports.")
+    },
+    pointToLayer: function(feature, latlng){
+      return L.marker(latlng);
+    },
+    style: style
+
 }).addTo(mymap);
 
-//9. Interactive elements
-function onEachFeature(feature, layer){
-  layer.bindPopup(feature.properties.name + feature.properties.count);
-  layer.on({
-    click : onStateClick,
-    mouseover : onStateHighlight,
-    mouseout : onStateMouseOut
-  });
-}
-
-//10. Create, run, and add legend
+//9. Create, run, and add legend
 
 var legend = L.control({position: 'topright'});
 
@@ -98,6 +100,6 @@ legend.onAdd = function() {
 
 legend.addTo(mymap);
 
-//11. Add scale
+//10. Add scale
 
 L.control.scale({position: 'bottomleft'}).addTo(mymap);
