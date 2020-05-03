@@ -70,7 +70,7 @@ function style(feature) {
 //8. Add states
 states = L.geoJson.ajax("assets/us-states.geojson", {
     onEachFeature: function (feature, layer) {
-          layer.bindPopup(feature.properties.name+" has "+feature.properties.count+" airports.")
+          layer.bindPopup(feature.properties.name+" : "+feature.properties.count+" airports.")
     },
     pointToLayer: function(feature, latlng){
       return L.marker(latlng);
