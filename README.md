@@ -1,20 +1,21 @@
 # United States Airport Interactive Web Map
+## Sindhooja Mullapudi
 
 **Introduction**
->This is an interactive web map of all the airports in the United States. All airports are marked with icon on the map based on their coordinates. The icons <i class="fa fa-rss marker"></i> represent the airport has an air traffic control tower, and the other means no control tower. The basemap is presenting numbers of airports in each states with sequtial color ramp. The darker color means more amounts of airports. The map is zoomed with the center `[38.987682, -97.125537]` so that people can have a broad view of the U.S.. There are more features which will be explained in the following content.
+>This is an interactive web map featuring all the airports in the United States as of 2012. All airports are marked with an airplane icon on the map based on their location. The icons that are red represent the airport has an air traffic control tower, and the red icons are the airports with no control tower. The basemap is presenting numbers of airports in each states with quantitative color map. The lighter the state, the fewer the airports; the darker the state, the more the number or airports. For more information on the other elements of the map, refer below. 
 
-***Below is a screenshot of the full map***
+>**Below is a screenshot of the full map**
 
 ![](img/full.png)
 ![](img/zoom.png)
 
 **Primary Functions**
-- **_Overall Information_**
+****_Overall Information_****
 >When the airplane markers are clicked, you can see a popup of the overall information about that particular airport, like below. 
 
 ![](img/MarkerPopup.png)
  
-- **_Airport Count Per State_**
+****_Airport Count Per State_****
 >When the states are clicked, you can see the total airport count in that state, like below. 
 
 ![](img/Countpopup.png)
