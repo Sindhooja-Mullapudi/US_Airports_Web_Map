@@ -34,6 +34,7 @@
 
 >airports.geojson _This data is converted from a shapefile_ has information about all the airports in the United States. 
 [Data.gov](https://catalog.data.gov/dataset/usgs-small-scale-dataset-airports-of-the-united-states-201207-shapefile).
+
 >us-states.geojson _This data is acquired from [Mike Bostock](https://bost.ocks.org/mike/) of [D3](https://d3js.org/)._ A geojson data file containing all the states' boundaries of the United States.
 
 ### Credit
