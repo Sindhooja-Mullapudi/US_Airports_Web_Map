@@ -24,13 +24,7 @@
 
 ### Libraries Used
 
->https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js
->https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js
->https://unpkg.com/leaflet@1.3.1/dist/leaflet.css
->https://unpkg.com/leaflet@1.4.0/dist/leaflet.js
->https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
->https://fonts.googleapis.com/css?family=Titillium+Web
->https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js
+>https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js|https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js|https://unpkg.com/leaflet@1.3.1/dist/leaflet.css|https://unpkg.com/leaflet@1.4.0/dist/leaflet.js|https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css|https://fonts.googleapis.com/css?family=Titillium+Web|https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js
 
 ### Data Sources
 
