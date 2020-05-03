@@ -1,5 +1,6 @@
 # United States Airport Interactive Web Map
 ## Sindhooja Mullapudi
+#### https://sindhooja-mullapudi.github.io/US_Airports_Web_Map/index.html 
 
 ### Introduction
 >This is an interactive web map featuring all the airports in the United States as of 2012. All airports are marked with an airplane icon on the map based on their location. The icons that are red represent the airport has an air traffic control tower, and the red icons are the airports with no control tower. The basemap is presenting numbers of airports in each states with quantitative color map. The lighter the state, the fewer the airports; the darker the state, the more the number or airports. For more information on the other elements of the map, refer below. 
@@ -43,8 +44,4 @@
 
 
 ### Acknowledgment
->Professor Bo Zhao|Geog 458|University of Washington
->Leaflet
->ajax.googlepis.com
->font-awesome
->Google
+>Professor Bo Zhao|Geog 458|University of Washington|Leaflet|ajax.googlepis.com|font-awesome|Google
