@@ -12,12 +12,12 @@
 - **_Overall Information_**
 >When the airplane markers are clicked, you can see a popup of the overall information about that particular airport, like below. 
 
-![](img/Marker Popup.png)
-
+![](img/MarkerPopup.png)
+ 
 - **_Airport Count Per State_**
 >When the states are clicked, you can see the total airport count in that state, like below. 
 
-![](img/Count popup.png)
+![](img/Countpopup.png)
 
 **Libraries Used**
 >https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js
